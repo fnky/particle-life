@@ -6,7 +6,6 @@ const gui = new dat.GUI();
 gui.autoPlace = true;
 
 const universeFolder = gui.addFolder('Universe');
-const cameraFolder = gui.addFolder('Camera');
 const renderingFolder = gui.addFolder('Rendering');
 
 const stepsPerFrameNormal = 1;
@@ -94,13 +93,8 @@ const sketch = ({ width, height }) => {
 
 	const universeSettings = {
 		...getSettingsForPreset(defaultPreset),
-		preset: defaultPreset
-	};
-
-	const cameraSettings = {
-		camX: width / 2,
-		camY: height / 2,
-		camZoom: 1
+		preset: defaultPreset,
+		wrap: false
 	};
 
 	const renderSettings = {
@@ -113,6 +107,7 @@ const sketch = ({ width, height }) => {
 		width,
 		height
 	);
+	universe.wrap = universeSettings.wrap;
 	universe.reSeed(
 		universeSettings.attractMean,
 		universeSettings.attractStd,
@@ -123,16 +118,6 @@ const sketch = ({ width, height }) => {
 		universeSettings.friction,
 		universeSettings.flatForce
 	);
-
-	// Camera settings
-	// let camX = width / 2;
-	// let camY = height / 2;
-	// let camZoom = 1;
-	let camXDest = cameraSettings.camX;
-	let camYDest = cameraSettings.camY;
-	let camZoomDest = cameraSettings.camZoom;
-	let lastScrollTime = 0;
-	let trackIndex = -1;
 
 	const onUniverseSettingsChange = () => {
 		universe.setPopulation(
@@ -184,14 +169,20 @@ const sketch = ({ width, height }) => {
 	universeFolder
 		.add(universeSettings, 'flatForce')
 		.onFinishChange(onUniverseSettingsChange);
-
+	universeFolder.add(universeSettings, 'wrap').onChange(() => {
+		universe.wrap = universeSettings.wrap;
+	});
 	universeFolder
 		.add(universeSettings, 'preset', Object.keys(presets))
 		.onFinishChange(onPresetChange);
-
-	cameraFolder.add(cameraSettings, 'camX', -100, 100);
-	cameraFolder.add(cameraSettings, 'camY', -100, 100);
-	cameraFolder.add(cameraSettings, 'camZoom', 1, 5);
+	universeFolder.add(
+		{
+			randomParticles: () => {
+				universe.setRandomParticles();
+			}
+		},
+		'randomParticles'
+	);
 
 	renderingFolder.add(renderSettings, 'stepsPerFrame', 1, 10);
 

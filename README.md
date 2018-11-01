@@ -1,3 +1,5 @@
+<img width="200" height="200" src="assets/particle-life.svg" alt="Particle Light" align="right" />
+
 # Particle Life
 
 A game of life using particles, instead of cells.

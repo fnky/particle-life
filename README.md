@@ -15,6 +15,7 @@ A JavaScript conversion, based on [Particle-Life](https://github.com/HackerPoet/
     - Allocate as much during initialization, before rendering.
     - Measure and optimize `Universe.step()` function.
     - Measure random-js and prob.js performance to ensure it is not a huge bottleneck.
+- [ ] Add camera logic with zoom and tracking.
 
 ## Known Bugs
 
@@ -24,9 +25,5 @@ A JavaScript conversion, based on [Particle-Life](https://github.com/HackerPoet/
 ## Probable bugs
 
 - With current seed, particles will create huge lumps. This may or may not be intended. Look into attraction algorithm and/or the randomness behind it.
-
-## Ideas
-
-- [ ] Port the C++ code to WASM using Emscripten.
 
 [demo]: https://whatever.io

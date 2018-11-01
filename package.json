@@ -1,0 +1,38 @@
+{
+	"name": "particle-life",
+	"version": "0.0.1",
+	"description": "Game of Life with particles",
+	"author": "Christian Petersen <chrs@cbp.io> (http://cbp.io)",
+	"license": "MIT",
+	"repository": "fnky/particle-life",
+	"keywords": [
+		"game",
+		"particles",
+		"canvas",
+		"web"
+	],
+	"scripts": {
+		"start": "canvas-sketch src/index.js",
+		"start:hot": "npm run start -- --hot --open",
+		"build": "canvas-sketch src/index.js --build --dir public/",
+		"format": "prettier --write **/*.{js,json,md}",
+		"precommit": "lint-staged"
+	},
+	"dependencies": {
+		"canvas-sketch": "0.0.27",
+		"dat.gui": "^0.7.3",
+		"prob.js": "^1.0.6",
+		"random-js": "^1.0.8",
+		"seedrandom": "^2.4.4"
+	},
+	"devDependencies": {
+		"lint-staged": "^8.0.4",
+		"prettier": "^1.14.3"
+	},
+	"lint-staged": {
+		"*.{js,json,md}": [
+			"prettier --write",
+			"git add"
+		]
+	}
+}

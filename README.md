@@ -22,8 +22,4 @@ A JavaScript conversion, based on [Particle-Life](https://github.com/HackerPoet/
 - Rendering performance is currently pretty poor (18-20 fps).
 - There's no keymapping for zooming / reset, yet.
 
-## Probable bugs
-
-- With current seed, particles will create huge lumps. This may or may not be intended. Look into attraction algorithm and/or the randomness behind it.
-
 [demo]: https://whatever.io

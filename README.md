@@ -35,3 +35,7 @@ A JavaScript conversion, based on [Particle-Life](https://github.com/HackerPoet/
 Contributions are very welcome. If you've found a bug create an [issue](issues) or even better, a [pull request](pulls).
 
 [demo]: https://fnky.github.com/particle-life
+
+## Credits
+
+[HackerPoet](https://github.com/HackerPoet) better known as CodeParade, for the original implementation. Check out his [YouTube channel](https://www.youtube.com/channel/UCrv269YwJzuZL3dH5PCgxUw).

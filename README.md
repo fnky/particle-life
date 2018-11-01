@@ -2,7 +2,7 @@
 
 A game of life using particles, instead of cells.
 
-A JavaScript conversion, based on [Particle-Life](https://github.com/HackerPoet/Particle-Life) by [HackerPoet](https://github.com/HackerPoet).
+A JavaScript conversion, based on [Particle-Life](https://github.com/HackerPoet/Particle-Life "Go to the repository of Particle-Life") by [HackerPoet](https://github.com/HackerPoet "Go to HackerPoet's GitHub profile").
 
 [See it in the browser][demo]
 
@@ -28,14 +28,14 @@ A JavaScript conversion, based on [Particle-Life](https://github.com/HackerPoet/
 
 - `start` — Start development. Opens browser and enables Hot reloading.
 - `build` — Build distrobution-friendly files.
-- `format` — Format files with [prettier](https://prettier.io/).
+- `format` — Format files with [prettier](https://prettier.io/ "Go to Prettier's website").
 
 ## Contributing
 
-Contributions are very welcome. If you've found a bug create an [issue](issues) or even better, a [pull request](pulls).
+Contributions are very welcome. If you've found a bug create an [issue](https://github.com/fnky/particle-life/issues "Go to Issues") or even better, a [pull request](https://github.com/fnky/particle-life/pulls "Go to Pull Requests").
 
 [demo]: https://fnky.github.com/particle-life
 
 ## Credits
 
-[HackerPoet](https://github.com/HackerPoet) better known as CodeParade, for the original implementation. Check out his [YouTube channel](https://www.youtube.com/channel/UCrv269YwJzuZL3dH5PCgxUw).
+[HackerPoet](https://github.com/HackerPoet "HackerPoet's GitHub profile") better known as CodeParade, for the original implementation. Check out his [YouTube channel](https://www.youtube.com/channel/UCrv269YwJzuZL3dH5PCgxUw "CodeParade's YouTube channel").

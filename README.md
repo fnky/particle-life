@@ -22,4 +22,16 @@ A JavaScript conversion, based on [Particle-Life](https://github.com/HackerPoet/
 - Rendering performance is currently pretty poor (18-20 fps).
 - There's no keymapping for zooming / reset, yet.
 
-[demo]: https://whatever.io
+## Development
+
+#### Scripts
+
+- `start` — Start development. Opens browser and enables Hot reloading.
+- `build` — Build distrobution-friendly files.
+- `format` — Format files with [prettier](https://prettier.io/).
+
+## Contributing
+
+Contributions are very welcome. If you've found a bug create an [issue](issues) or even better, a [pull request](pulls).
+
+[demo]: https://fnky.github.com/particle-life

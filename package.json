@@ -12,8 +12,7 @@
 		"web"
 	],
 	"scripts": {
-		"start": "canvas-sketch src/index.js",
-		"start:hot": "npm run start -- --hot --open",
+		"start": "canvas-sketch src/index.js --hot --open",
 		"build": "canvas-sketch src/index.js --build --dir public/",
 		"format": "prettier --write **/*.{js,json,md}",
 		"precommit": "lint-staged"

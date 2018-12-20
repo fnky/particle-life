@@ -25,6 +25,7 @@
 		"seedrandom": "^2.4.4"
 	},
 	"devDependencies": {
+		"canvas-sketch-cli": "^1.1.9",
 		"lint-staged": "^8.0.4",
 		"prettier": "^1.14.3"
 	},

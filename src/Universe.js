@@ -31,6 +31,8 @@ class Universe {
 		this.friction = 0;
 		this.flatForce = false;
 		this.wrap = false;
+
+		this.mouseForce = {x: null, y: null, forceLevel: null};
 	}
 
 	reSeed(
@@ -117,7 +119,16 @@ class Universe {
 		for (let i = 0; i < this.particles.length; ++i) {
 			// Current particle
 			const p = this.particles[i];
+			if (this.mouseForce.x !== null && this.mouseForce.y !== null) {
+				const repelRadius = 40;
+				const r_x = p.x - this.mouseForce.x;
+				const r_y = p.y - this.mouseForce.y;
 
+				if (Math.sqrt(Math.pow(r_x,2) + Math.pow(r_y, 2)) < repelRadius) {
+					p.vx += this.mouseForce.forceLevel / r_x;
+					p.vy += this.mouseForce.forceLevel / r_y;
+				}
+			}
 			// Interactions
 			for (let j = 0; j < this.particles.length; ++j) {
 				// Other particle
@@ -309,6 +320,30 @@ class Universe {
 			}
 			console.log('');
 		}
+	}
+
+	startRepelling(x, y) {
+		this.mouseForce.x = x;
+		this.mouseForce.y = y;
+		this.mouseForce.forceLevel = 5;
+	}
+
+	startAttracting(x, y) {
+		this.mouseForce.x = x;
+		this.mouseForce.y = y;
+		this.mouseForce.forceLevel = -1;
+	}
+
+	stopRepelling() {
+		this.mouseForce.x = null;
+		this.mouseForce.y = null;
+		this.mouseForce.forceLevel = null;
+	}
+
+	stopAttracting() {
+		this.mouseForce.x = null;
+		this.mouseForce.y = null;
+		this.mouseForce.forceLevel = null;
 	}
 }
 

@@ -107,6 +107,25 @@ const sketch = ({ width, height }) => {
 		width,
 		height
 	);
+
+	document.oncontextmenu = function(e){
+	 return false;
+	}
+
+	window.addEventListener('mousedown', event => {
+		event.preventDefault();
+		if (event.which === 1) universe.startRepelling(event.pageX, event.pageY);
+		if (event.which === 3) universe.startAttracting(event.pageX, event.pageY);
+	});
+
+	window.addEventListener('mouseup', event => {
+		event.preventDefault();
+		if (event.which === 1) universe.stopRepelling();
+		if (event.which === 3) universe.stopAttracting();
+		
+	});	
+
+
 	universe.wrap = universeSettings.wrap;
 	universe.reSeed(
 		universeSettings.attractMean,

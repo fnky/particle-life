@@ -14,7 +14,8 @@
 	"scripts": {
 		"start": "canvas-sketch src/index.js --hot --open",
 		"build": "canvas-sketch src/index.js --build --dir public/",
-		"format": "prettier --write **/*.{js,json,md}"
+    "format": "prettier --write **/*.{js,json,md}",
+    "deploy": "GIT_DEPLOY_DIR=public bash deploy.sh"
 	},
 	"dependencies": {
 		"canvas-sketch": "^0.7.4",

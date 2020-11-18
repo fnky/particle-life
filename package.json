@@ -18,14 +18,14 @@
 		"precommit": "lint-staged"
 	},
 	"dependencies": {
-		"canvas-sketch": "0.0.27",
+		"canvas-sketch": "0.7.4",
 		"dat.gui": "^0.7.3",
 		"prob.js": "^1.0.6",
 		"random-js": "^1.0.8",
 		"seedrandom": "^2.4.4"
 	},
 	"devDependencies": {
-		"canvas-sketch-cli": "^1.1.9",
+		"canvas-sketch-cli": "^1.11.9",
 		"lint-staged": "^8.0.4",
 		"prettier": "^1.14.3"
 	},

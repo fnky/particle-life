@@ -14,50 +14,50 @@ const settings = {
 	animate: true,
 	scaleToFit: true,
 	scaleToView: true,
-	loop: false
+	loop: false,
 };
 
 const presets = {
 	Balanced: {
 		population: [9, 400],
-		seed: [-0.02, 0.06, 0.0, 20.0, 20.0, 70.0, 0.05, false]
+		seed: [-0.02, 0.06, 0.0, 20.0, 20.0, 70.0, 0.05, false],
 	},
 	Chaos: {
 		population: [6, 400],
-		seed: [0.02, 0.04, 0.0, 30.0, 30.0, 100.0, 0.01, false]
+		seed: [0.02, 0.04, 0.0, 30.0, 30.0, 100.0, 0.01, false],
 	},
 	Diversity: {
 		population: [12, 400],
-		seed: [-0.01, 0.04, 0.0, 20.0, 10.0, 60.0, 0.05, true]
+		seed: [-0.01, 0.04, 0.0, 20.0, 10.0, 60.0, 0.05, true],
 	},
 	Frictionless: {
 		population: [6, 300],
-		seed: [0.01, 0.005, 10.0, 10.0, 10.0, 60.0, 0.0, true]
+		seed: [0.01, 0.005, 10.0, 10.0, 10.0, 60.0, 0.0, true],
 	},
 	Gliders: {
 		population: [6, 400],
-		seed: [0.0, 0.06, 0.0, 20.0, 10.0, 50.0, 0.1, true]
+		seed: [0.0, 0.06, 0.0, 20.0, 10.0, 50.0, 0.1, true],
 	},
 	Homogeneity: {
 		population: [4, 400],
-		seed: [0.0, 0.04, 10.0, 10.0, 10.0, 80.0, 0.05, true]
+		seed: [0.0, 0.04, 10.0, 10.0, 10.0, 80.0, 0.05, true],
 	},
 	'Large Clusters': {
 		population: [6, 400],
-		seed: [0.025, 0.02, 0.0, 30.0, 30.0, 100.0, 0.2, false]
+		seed: [0.025, 0.02, 0.0, 30.0, 30.0, 100.0, 0.2, false],
 	},
 	'Medium Clusters': {
 		population: [6, 400],
-		seed: [0.02, 0.05, 0.0, 20.0, 20.0, 50.0, 0.05, false]
+		seed: [0.02, 0.05, 0.0, 20.0, 20.0, 50.0, 0.05, false],
 	},
 	Quiescence: {
 		population: [6, 300],
-		seed: [-0.02, 0.1, 10.0, 20.0, 20.0, 60.0, 0.2, false]
+		seed: [-0.02, 0.1, 10.0, 20.0, 20.0, 60.0, 0.2, false],
 	},
 	'Small Clusters': {
 		population: [6, 600],
-		seed: [-0.005, 0.01, 10.0, 10.0, 20.0, 50.0, 0.01, false]
-	}
+		seed: [-0.005, 0.01, 10.0, 10.0, 20.0, 50.0, 0.01, false],
+	},
 };
 
 function getSettingsForPreset(preset) {
@@ -71,7 +71,7 @@ function getSettingsForPreset(preset) {
 		maxRLower,
 		maxRUpper,
 		friction,
-		flatForce
+		flatForce,
 	] = seed;
 
 	return {
@@ -84,7 +84,7 @@ function getSettingsForPreset(preset) {
 		maxRLower,
 		maxRUpper,
 		friction,
-		flatForce
+		flatForce,
 	};
 }
 
@@ -94,11 +94,11 @@ const sketch = ({ width, height }) => {
 	const universeSettings = {
 		...getSettingsForPreset(defaultPreset),
 		preset: defaultPreset,
-		wrap: false
+		wrap: false,
 	};
 
 	const renderSettings = {
-		stepsPerFrame: stepsPerFrameNormal
+		stepsPerFrame: stepsPerFrameNormal,
 	};
 
 	const universe = new Universe(
@@ -179,7 +179,7 @@ const sketch = ({ width, height }) => {
 		{
 			randomParticles: () => {
 				universe.setRandomParticles();
-			}
+			},
 		},
 		'randomParticles'
 	);

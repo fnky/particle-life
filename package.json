@@ -26,7 +26,7 @@
 	},
 	"devDependencies": {
 		"canvas-sketch-cli": "^1.11.9",
-		"lint-staged": "^8.0.4",
+		"lint-staged": "^10.5.1",
 		"prettier": "^2.1.2"
 	},
 	"lint-staged": {

@@ -18,7 +18,7 @@
 		"precommit": "lint-staged"
 	},
 	"dependencies": {
-		"canvas-sketch": "0.7.4",
+		"canvas-sketch": "^0.7.4",
 		"dat.gui": "^0.7.3",
 		"prob.js": "^1.0.6",
 		"random-js": "^1.0.8",
@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"canvas-sketch-cli": "^1.11.9",
 		"lint-staged": "^8.0.4",
-		"prettier": "^1.14.3"
+		"prettier": "^2.1.2"
 	},
 	"lint-staged": {
 		"*.{js,json,md}": [

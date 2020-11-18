@@ -18,7 +18,7 @@
 	},
 	"dependencies": {
 		"canvas-sketch": "^0.7.4",
-		"dat.gui": "^0.7.3",
+		"dat.gui": "^0.7.7",
 		"prob.js": "^1.0.6",
 		"random-js": "^1.0.8",
 		"seedrandom": "^2.4.4"

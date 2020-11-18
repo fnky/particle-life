@@ -1,5 +1,6 @@
 const canvasSketch = require('canvas-sketch');
 const dat = require('dat.gui');
+const { MersenneTwister19937, browserCrypto } = require('random-js');
 const Universe = require('./Universe');
 
 const gui = new dat.GUI();
@@ -7,6 +8,7 @@ gui.autoPlace = true;
 
 const universeFolder = gui.addFolder('Universe');
 const renderingFolder = gui.addFolder('Rendering');
+const entropyFolder = gui.addFolder('Entropy');
 
 const stepsPerFrameNormal = 1;
 
@@ -15,6 +17,14 @@ const settings = {
 	scaleToFit: true,
 	scaleToView: true,
 	loop: false,
+};
+
+const engines = {
+	MersenneTwister19937: (() => {
+		const generator = MersenneTwister19937.autoSeed();
+		return generator.next.bind(generator);
+	})(),
+	WebCrypto: browserCrypto.next,
 };
 
 const presets = {
@@ -101,6 +111,10 @@ const sketch = ({ width, height }) => {
 		stepsPerFrame: stepsPerFrameNormal,
 	};
 
+	const entropySettings = {
+		engine: 'MersenneTwister19937',
+	};
+
 	const universe = new Universe(
 		universeSettings.numTypes,
 		universeSettings.numParticles,
@@ -145,6 +159,13 @@ const sketch = ({ width, height }) => {
 		onUniverseSettingsChange();
 	};
 
+	const onEngineChange = () => {
+		universe.setEngine(
+			engines[entropySettings.engine] || engines.MersenneTwister19937
+		);
+		onUniverseSettingsChange();
+	};
+
 	universeFolder
 		.add(universeSettings, 'attractMean', -1, 1)
 		.onFinishChange(onUniverseSettingsChange);
@@ -185,6 +206,10 @@ const sketch = ({ width, height }) => {
 	);
 
 	renderingFolder.add(renderSettings, 'stepsPerFrame', 1, 10);
+
+	entropyFolder
+		.add(entropySettings, 'engine', Object.keys(engines))
+		.onFinishChange(onEngineChange);
 
 	return ({ context, width, height }) => {
 		context.fillStyle = 'black';

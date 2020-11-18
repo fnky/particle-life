@@ -1,4 +1,4 @@
-const Random = require('random-js');
+const { Random, MersenneTwister19937, browserCrypto } = require('random-js');
 const Prob = require('prob.js');
 const ParticleTypes = require('./Particles');
 const resizeArray = require('./resizeArray');
@@ -12,7 +12,7 @@ const R_SMOOTH = 2.0;
 
 class Universe {
 	constructor(numTypes, numParticles, width, height) {
-		this.randGen = Random.engines.mt19937().seed(Date.now());
+		this.randGen = browserCrypto.next;
 		this.types = new ParticleTypes();
 		this.particles = Array.from({ length: numParticles }, () => makeParticle());
 
@@ -31,6 +31,10 @@ class Universe {
 		this.friction = 0;
 		this.flatForce = false;
 		this.wrap = false;
+	}
+
+	setEngine(newEngine) {
+		this.randGen = newEngine;
 	}
 
 	reSeed(

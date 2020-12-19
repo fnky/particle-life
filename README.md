@@ -41,3 +41,4 @@ Contributions are very welcome. If you've found a bug create an [issue](https://
 ## Credits
 
 [HackerPoet](https://github.com/HackerPoet "HackerPoet's GitHub profile") better known as CodeParade, for the original implementation. Check out his [YouTube channel](https://www.youtube.com/channel/UCrv269YwJzuZL3dH5PCgxUw "CodeParade's YouTube channel").
+[![Run on Repl.it](https://repl.it/badge/github/fnky/particle-life)](https://repl.it/github/fnky/particle-life)
